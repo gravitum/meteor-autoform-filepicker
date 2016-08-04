@@ -1,0 +1,38 @@
+<template name="autoformFilePicker">
+  {{#if shownChooser}}
+    <div class="afPickerPup">
+      <div class="afHeader">
+        <div>
+        <a class="btn pull-right popDown"><i class="icon icon-remove icon-2x"></i></a>
+        </div>
+        {{#if this.atts.upload}}
+        {{> UploadFileButton uploadOptions this}}
+        {{/if}}
+      </div>
+      <div class="afContent">
+        {{#each files}}
+          <div class="col-sm-3 col-xs-2" style="height: 150px;overflow: hidden;">
+            <img src="{{this.file.url}}" style="height: 100%; " class="popDown file" />
+          </div>
+        {{/each}}
+      </div>
+    </div>
+  {{/if}}
+  {{#if this.atts.showUrl}}
+  <input type="text" {{atts this.atts}} value="{{this.value}}" class="form-control afFPVK"/>
+  {{else}}
+  <div {{atts this.atts}} data-value="{{this.value}}" class="afFPVK">
+  </div>
+  {{/if}}
+  <a  class="btn btn-primary showChooser">Choose</a>
+  {{#if this.atts.showIcon}}
+    <img  class="fpPreviewIcon"  src="{{value}}"/>
+  {{else}}
+  
+  {{/if}}
+</template>
+
+<template name="afFilePickerUpload">
+<b>Insert table type</b>
+  <input class="tbImFmFl" type="file"/>
+</template>

@@ -1,0 +1,30 @@
+.afPickerPup {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 15000;
+  background: white;
+}
+
+.afPickerPup .afHeader {
+  position: absolute;
+  height: 60px;
+  left: 0;
+  right: 0;
+  top: 0;
+}
+
+.afPickerPup .afContent {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 61px;
+  overflow-x: scroll; 
+}
+
+.fpPreviewIcon {
+  height: 40px;
+}

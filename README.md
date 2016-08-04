@@ -1,11 +1,11 @@
 gravitum:autoform-file-picker
 =========================
 
-An add-on Meteor package for [aldeed:autoform](https://github.com/aldeed/meteor-autoform). Provides a single custom input type, "file-picker", which provides functionality to upload files.
+An add-on Meteor package for [aldeed:autoform](https://github.com/aldeed/meteor-autoform). Provides a single custom input type, "file-picker", which provides functionality to select uploaded files or upload files. Designed especially for images.
 
 ## Prerequisites
 
-[gravitum:file-collectin](https://github.com/gravitum/meteor-file-collection) package should be installed.
+[gravitum:file-collectin](https://github.com/gravitum/meteor-file-collection) package should be installed and configured.
 
 
 ## Installation
@@ -28,15 +28,14 @@ In the schema, which will then work with a `quickForm` or `afQuickFields`:
         label: "Logo",
         autoform: {
           type: "file-picker",
-          collection: "logos",
-          showIcon: true,
+          collection: "logos", // required, filecollection name
+          showIcon: true, // if a mini image should be shown in the form
           upload: {
             onInsert: function(doc){
               doc.shopId = Session.get("shopId");
             }
           },
-          showUrl: true
-        }
+          showUrl: true // specify if the complete url of the image should in the form
       },
 ```
 #API

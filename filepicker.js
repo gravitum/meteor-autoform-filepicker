@@ -9,65 +9,9 @@ AutoForm.addInputType("file-picker", {
     } else {
       return this.attr("data-value")
     }
-    // if (this.val()) {
-    //   var val = this.datepicker('getUTCDate');
-    //   return (val instanceof Date) ? val : this.val();
-    // }
   }
 });
 
-
-
-// Template.afBootstrapDatepicker.helpers({
-//   atts: function addFormControlAtts() {
-//     var atts = _.clone(this.atts);
-//     // Add bootstrap class
-//     atts = AutoForm.Utility.addClass(atts, "form-control");
-//     delete atts.datePickerOptions;
-//     return atts;
-//   }
-// });
-
-// Template.afBootstrapDatepicker.rendered = function () {
-//   var $input = this.data.atts.buttonClasses ? this.$('.input-group.date') : this.$('input');
-//   var data = this.data;
-
-//   // instanciate datepicker
-//   $input.datepicker(data.atts.datePickerOptions);
-
-//   // set and reactively update values
-//   this.autorun(function () {
-//     var data = Template.currentData();
-
-//     // set field value
-//     if (data.value instanceof Date) {
-//       $input.datepicker('setUTCDate', data.value);
-//     } else if (typeof data.value === "string") {
-//       $input.datepicker('update', data.value);
-//     }
-
-//     // set start date if there's a min in the schema
-//     if (data.min instanceof Date) {
-//       // datepicker plugin expects local Date object,
-//       // so convert UTC Date object to local
-//       var startDate = utcToLocal(data.min);
-//       $input.datepicker('setStartDate', startDate);
-//     }
-
-//     // set end date if there's a max in the schema
-//     if (data.max instanceof Date) {
-//       // datepicker plugin expects local Date object,
-//       // so convert UTC Date object to local
-//       var endDate = utcToLocal(data.max);
-//       $input.datepicker('setEndDate', endDate);
-//     }
-//   });
-// };
-
-// Template.afBootstrapDatepicker.destroyed = function () {
-//   var $input = this.data.atts.buttonClasses ? this.$('.input-group.date') : this.$('input');
-//   $input.datepicker('remove');
-// };
 
 
 Template.autoformFilePicker.created = function(){
@@ -113,7 +57,6 @@ Template.autoformFilePicker.helpers({
   files: function(){
     console.log(this.atts)
     return FileCollection._collections[this.atts.collection].find();
-    return FS._collections[this.atts.collection].find();
   },
   uploadOptions: function(self){
     var uploadOptions = _.isObject(self.atts.upload)? self.atts.upload: {} 

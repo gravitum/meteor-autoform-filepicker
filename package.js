@@ -1,6 +1,6 @@
 Package.describe({
   name: 'gravitum:autoform-file-picker',
-  summary: 'Custom file-picker input type for AutoForm',
+  summary: 'Custom file input type for AutoForm, provides functionality to select uploaded files or upload files',
   version: '1.0.0',
   git: 'https://github.com/gravitum/meteor-autoform-file-picker.git'
 });
